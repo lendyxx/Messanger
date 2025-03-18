@@ -33,9 +33,6 @@ func init() {
 
 }
 
-// go env -w CGO_CFLAGS="-O2 -g -IC:\java\jdk-23\include -IC:\java\jdk-23\include\win32 -fdeclspec"
-// fyne package -os android -appID com.messenger.app -javaSource D:\Users\akuzm\GolandProjects\fyne-test\javaApp\java
-
 func main() {
 	a := app.New()
 
