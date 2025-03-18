@@ -1,0 +1,5 @@
+.idea
+*.apk
+javaApp/java/lib
+myclass.jar
+*.log
