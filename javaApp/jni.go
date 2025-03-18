@@ -3,16 +3,12 @@ package javaApp
 import (
 	"errors"
 	"fmt"
-	"fyne-test/gores"
 	"github.com/timob/jnigi"
 	"log"
 	"sync"
 )
 
-type Contact struct {
-	Name  string
-	Phone string
-}
+//go:generate go run genres/genres.go
 
 type JNI struct {
 	env    *jnigi.Env
@@ -106,7 +102,7 @@ func (jni *JNI) initAppActivity() (err error) {
 		return errors.New("app object is nil")
 	}
 
-	if err := jni.env.CallStaticMethod("org/golang/app/GoNativeActivity", "setNotifyIcon", nil, gores.Ic_notification_png); err != nil {
+	if err := jni.env.CallStaticMethod("org/golang/app/GoNativeActivity", "setNotifyIcon", nil, IcNotificationPng); err != nil {
 		return fmt.Errorf("set notify icon failed: %w", err)
 	}
 

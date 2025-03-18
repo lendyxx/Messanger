@@ -5,6 +5,11 @@ import (
 	"github.com/timob/jnigi"
 )
 
+type Contact struct {
+	Name  string
+	Phone string
+}
+
 func (jni *JNI) LoadContacts() ([]Contact, error) {
 	jni.getContactsCh <- struct{}{}
 	return <-jni.contactsCh, jni.err
